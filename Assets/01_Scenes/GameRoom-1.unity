@@ -141,7 +141,7 @@ Transform:
   m_LocalScale: {x: 1.6491, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 700180905}
-  m_RootOrder: 7
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &366938877
 GameObject:
@@ -278,7 +278,43 @@ Transform:
   m_LocalScale: {x: 1.6491, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 700180905}
-  m_RootOrder: 11
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &638971564
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 638971565}
+  m_Layer: 0
+  m_Name: TerrainGrassParent
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &638971565
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 638971564}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 4802134704661683}
+  - {fileID: 4802136227892517}
+  - {fileID: 4802136346237950}
+  - {fileID: 4802134286997596}
+  - {fileID: 4802134391679549}
+  - {fileID: 4802135950924321}
+  m_Father: {fileID: 700180905}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &700180904
 GameObject:
@@ -309,12 +345,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 4802134704661683}
-  - {fileID: 4802136227892517}
-  - {fileID: 4802136346237950}
-  - {fileID: 4802134286997596}
-  - {fileID: 4802134391679549}
-  - {fileID: 4802135950924321}
+  - {fileID: 638971565}
   - {fileID: 1729489299}
   - {fileID: 29316840}
   - {fileID: 1187424298}
@@ -331,7 +362,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 700180904}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 876d4faa20689b6488da8a4b6d5ff9fe, type: 3}
   m_Name: 
@@ -366,25 +397,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 700180904}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b1ce5bc2a38824bcf8c76e033e45e619, type: 3}
+  m_Script: {fileID: 11500000, guid: a3912ef69328e4f369d781931e1f7c6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
   moveFlag: 0
   FinishFlag: 0
-  Terrain0: {fileID: 1076262856525817}
-  Terrain1: {fileID: 1076261292437103}
-  Terrain2: {fileID: 1076261276825780}
-  Terrain3: {fileID: 1076262438484758}
-  Terrain4: {fileID: 1076262677760375}
-  Terrain5: {fileID: 1076260881512811}
-  TerrainPosList:
-  - {fileID: 1729489299}
-  - {fileID: 29316840}
-  - {fileID: 1187424298}
-  - {fileID: 1614450814}
-  - {fileID: 1230037877}
-  - {fileID: 543540309}
+  FloorGroup: {fileID: 638971564}
 --- !u!1 &839826459
 GameObject:
   m_ObjectHideFlags: 0
@@ -664,7 +683,7 @@ Transform:
   m_LocalScale: {x: 1.6491, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 700180905}
-  m_RootOrder: 8
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 2.206, y: 0, z: 0}
 --- !u!1 &1230037876
 GameObject:
@@ -694,7 +713,7 @@ Transform:
   m_LocalScale: {x: 1.6491, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 700180905}
-  m_RootOrder: 10
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 11.049001, y: 0, z: 0}
 --- !u!1 &1614450813
 GameObject:
@@ -724,7 +743,7 @@ Transform:
   m_LocalScale: {x: 1.6491, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 700180905}
-  m_RootOrder: 9
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 3.0830002, y: 0, z: 0}
 --- !u!1 &1729489298
 GameObject:
@@ -754,7 +773,7 @@ Transform:
   m_LocalScale: {x: 1.6491, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 700180905}
-  m_RootOrder: 6
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2098357729
 PrefabInstance:
@@ -865,7 +884,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1076262438484758}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ecb2bc4d70695fd438061ba41ac92947, type: 3}
   m_Name: 
@@ -925,7 +944,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 700180905}
+    m_TransformParent: {fileID: 638971565}
     m_Modifications:
     - target: {fileID: 731353714337881868, guid: f1c4546937675824082d5fa1edfdfb40,
         type: 3}
@@ -994,7 +1013,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 700180905}
+    m_TransformParent: {fileID: 638971565}
     m_Modifications:
     - target: {fileID: 1344012513454271246, guid: 384f15bc10828f44eb8d9db260717920,
         type: 3}
@@ -1063,7 +1082,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 700180905}
+    m_TransformParent: {fileID: 638971565}
     m_Modifications:
     - target: {fileID: 6590616753532610142, guid: 7f83dc4b3f4b676478278f93ff5e6987,
         type: 3}
@@ -1132,7 +1151,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 700180905}
+    m_TransformParent: {fileID: 638971565}
     m_Modifications:
     - target: {fileID: 6931672229981011323, guid: 7d607907a5d6a6045b52f5d6cebc498c,
         type: 3}
@@ -1201,7 +1220,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 700180905}
+    m_TransformParent: {fileID: 638971565}
     m_Modifications:
     - target: {fileID: 6938573758642371616, guid: 228d776e545463546b49577ea8b612c6,
         type: 3}
@@ -1270,7 +1289,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 700180905}
+    m_TransformParent: {fileID: 638971565}
     m_Modifications:
     - target: {fileID: 8551272500086334697, guid: 06a36fdea5fc6354fb8da2780839156f,
         type: 3}
