@@ -320,6 +320,7 @@ GameObject:
   m_Component:
   - component: {fileID: 700180905}
   - component: {fileID: 700180906}
+  - component: {fileID: 700180907}
   m_Layer: 0
   m_Name: terrain
   m_TagString: Untagged
@@ -361,13 +362,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 700180904}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 876d4faa20689b6488da8a4b6d5ff9fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   moveFlag: 0
-  FinishFlag: 0
+  FinishFlag: 1
   T1F: 0
   T2F: 0
   T3F: 0
@@ -380,6 +381,33 @@ MonoBehaviour:
   Terrain3: {fileID: 1076262438484758}
   Terrain4: {fileID: 1076262677760375}
   Terrain5: {fileID: 1076260881512811}
+  TerrainTranList:
+  - {fileID: 1729489299}
+  - {fileID: 29316840}
+  - {fileID: 1187424298}
+  - {fileID: 1614450814}
+  - {fileID: 1230037877}
+  - {fileID: 543540309}
+  - {fileID: 311294370}
+--- !u!114 &700180907
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 700180904}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bac8eb0ef3684b928ceaed3bbd509ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TerrainGoList:
+  - {fileID: 1076262856525817}
+  - {fileID: 1076261292437103}
+  - {fileID: 1076261276825780}
+  - {fileID: 1076262438484758}
+  - {fileID: 1076262677760375}
+  - {fileID: 1076260881512811}
   TerrainTranList:
   - {fileID: 1729489299}
   - {fileID: 29316840}
