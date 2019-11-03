@@ -114,27 +114,27 @@ public class GameController : MonoBehaviour
 			ChangTargetPoint(Terrain1.transform,1);
 			FinishTurn();
 		}
-		if(targetNum[2]==0){
+		else if(targetNum[2]==0){
 			Debug.Log("判斷T2在最尾端");
 			ChangTargetPoint(Terrain2.transform,2);
 			FinishTurn();
 		}
-		if(targetNum[3]==0){
+		else if(targetNum[3]==0){
 			Debug.Log("判斷T3在最尾端");
 			ChangTargetPoint(Terrain3.transform,3);
 			FinishTurn();
 		}
-		if(targetNum[4]==0){
+		else if(targetNum[4]==0){
 			Debug.Log("判斷T4在最尾端");
 			ChangTargetPoint(Terrain4.transform,4);
 			FinishTurn();
 		}
-		if(targetNum[5]==0){
+		else if(targetNum[5]==0){
 			Debug.Log("判斷T5在最尾端");
 			ChangTargetPoint(Terrain5.transform,5);
 			FinishTurn();
 		}
-		if(targetNum[0]==0){
+		else if(targetNum[0]==0){
 			Debug.Log("判斷T0在最尾端");
 			ChangTargetPoint(Terrain0.transform,0);
 			FinishTurn();
@@ -144,7 +144,7 @@ public class GameController : MonoBehaviour
 
 	void ChangTargetPoint(Transform Terrain,int lastT){
 		Debug.Log("更改各塊地的移動目標點");
-		for(int n=0;n<5;n++){	
+		for(int n=0;n<=5;n++){	
 			if(n==lastT){
 				Debug.Log("最尾端:更改T"+lastT+"下輪目標點從Pos"+targetNum[n]+"更改成Pos5");
 				targetNum[n]=5;
@@ -160,6 +160,7 @@ public class GameController : MonoBehaviour
 
 	void FinishTurn(){
 		Debug.Log("FinishFlag改為TRUE，地形再度移動");
+		Debug.Log(targetNum[0]+","+targetNum[1]+","+targetNum[2]+","+targetNum[3]+","+targetNum[4]+","+targetNum[5]+","+targetNum[6]);
 		FinishFlag=true;
 	}  
 }
