@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GameController : MonoBehaviour
 {	
-    public static float speed =10.0f;
+    public static float speed =1f;
 	public bool moveFlag=false;
 	public bool FinishFlag=true;
 	public bool T1F=false;
@@ -21,15 +21,36 @@ public class GameController : MonoBehaviour
 	int[] targetNum =new int[7]{5,0,1,2,3,4,6};   //記錄各個terrain接下來要移動往哪個點，例:targetNum[0]=5，terrain0接下來要往pos5移動。
 	//int tarN=0;
 	float step ; 
+
+	public List<float> MoveLength = new List<float>();
 	
+	private float startTime;
+	private float journeyLength;
 
     void Start(){
 		//Debug.Log(targetNum[1]);
 		//Debug.Log(target[targetNum[1]]);
-		step =  speed * Time.deltaTime;
+		//step =  speed * Time.deltaTime;
+		startTime = Time.time;
+		MoveLength.Add((Terrain0.transform.position-TerrainTranList[0].position).sqrMagnitude);
+		MoveLength.Add((Terrain1.transform.position-TerrainTranList[1].position).sqrMagnitude);
+		MoveLength.Add((Terrain2.transform.position-TerrainTranList[2].position).sqrMagnitude);
+		MoveLength.Add((Terrain3.transform.position-TerrainTranList[3].position).sqrMagnitude);
+		MoveLength.Add((Terrain4.transform.position-TerrainTranList[4].position).sqrMagnitude);
+		MoveLength.Add((Terrain5.transform.position-TerrainTranList[5].position).sqrMagnitude);
+
+		Debug.Log(MoveLength[0]);
+		Debug.Log(MoveLength[1]);
+		Debug.Log(MoveLength[2]);
+		Debug.Log(MoveLength[3]);
+		Debug.Log(MoveLength[4]);
+		Debug.Log(MoveLength[5]);
+
+
 		moveFlag=true;
 		Debug.Log("將moveflag改為true");
 		FinishFlag=true;
+
     }
 
 	 void Update(){
@@ -39,20 +60,25 @@ public class GameController : MonoBehaviour
 			if(FinishFlag){
 				Debug.Log("偵測到FinishFlag改為true");
 				Debug.Log("移動地板中");				
-				moveTerrain(Terrain1.transform,TerrainTranList[targetNum[1]]);
-				moveTerrain(Terrain2.transform,TerrainTranList[targetNum[2]]);
-				moveTerrain(Terrain3.transform,TerrainTranList[targetNum[3]]);
-				moveTerrain(Terrain4.transform,TerrainTranList[targetNum[4]]);
-				moveTerrain(Terrain5.transform,TerrainTranList[targetNum[5]]);
-				moveTerrain(Terrain0.transform,TerrainTranList[targetNum[0]]);					
+				//moveTerrain(Terrain1.transform,TerrainTranList[targetNum[1]]);
+				//moveTerrain(Terrain2.transform,TerrainTranList[targetNum[2]]);
+				//moveTerrain(Terrain3.transform,TerrainTranList[targetNum[3]]);
+				//moveTerrain(Terrain4.transform,TerrainTranList[targetNum[4]]);
+				//moveTerrain(Terrain5.transform,TerrainTranList[targetNum[5]]);
+				//moveTerrain(Terrain0.transform,TerrainTranList[targetNum[0]]);					
 			}
 		}
     }
 	
-	void moveTerrain(Transform terrain,Transform moveToPos)
-	{
-	terrain.position = Vector3.MoveTowards(terrain.transform.position, moveToPos.position, step);
-	checkIsArrival();
+	void moveTerrain(Transform terrain,Transform moveToPos){
+		journeyLength = Vector3.Distance(terrain.position, moveToPos.position);//這句不該重複算  應該只算一次  直到本輪做完  要怎麼做
+
+		float distCovered = (Time.time - startTime) * speed;
+        float fractionOfJourney = distCovered / journeyLength;
+        transform.position = Vector3.Lerp(terrain.position, moveToPos.position, fractionOfJourney);
+
+		//terrain.position = Vector3.MoveTowards(terrain.transform.position, moveToPos.position, step);
+		checkIsArrival();
 	}
 
 	void checkIsArrival(){
